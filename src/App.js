@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
+import LoginForm from './components/LoginForm/LoginForm';
+import ChatContent from './components/Chat/ChatContent';
+import { useNavigate } from "react-router-dom";
+
 
 function App() {
+
+  const navigate = useNavigate();
+
+  const [users, setUsers] = useState({name: ''})
+
+  const Login = () => {
+    console.log('Login')
+    setUsers()
+    navigate('/chat')
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div className='app'>
+      {(users.name !== '') ? (
+        <div>
+          <ChatContent />
+        </div>
+        ) : (
+          <LoginForm Login={Login} /> 
+      )} 
+    </div>   
+  )
 }
 
 export default App;

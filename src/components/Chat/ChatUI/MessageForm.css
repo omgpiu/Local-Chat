@@ -1,0 +1,62 @@
+.messageform {
+    position: fixed;
+    padding: 15px 0px;
+    bottom: 0px;
+    width: 900px;
+    background-color: rgb(198, 248, 202);
+    border-top: 1px solid white;
+}
+
+.messageform-input {
+    position: relative;
+    width: 670px;
+    font-size: 18px;
+    margin-left: 40px;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.messageform-input:focus {
+    outline: none;
+}
+
+.sendmessage-button {
+    color: white;
+    background-color: rgb(116, 140, 252);
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 2px 4px;
+    margin: 0px 5px;
+    transition: transform 0.4s;
+}
+
+.sendmessage-button:hover {
+    transition: 0.4s;
+    background-color: rgb(75, 90, 158);
+}
+
+.sendmessage-button:active {
+    transform: scale(0.9);
+}
+
+.emoji-button {
+    position: fixed;
+    cursor: pointer;
+    margin-left: 10px;
+    margin: 10px 5px;
+    color: rgb(97, 97, 97);
+}
+
+@media (max-width: 760px) {
+    .messageform-input {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .messageform-input {
+        width: 73vw;
+        margin-left: 30px;
+    }
+}

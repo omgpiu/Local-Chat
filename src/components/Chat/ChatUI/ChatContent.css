@@ -1,0 +1,70 @@
+.chatcontent {
+    display: grid;
+    width: 900px;
+    height: 100vh;
+    margin: auto ;
+    background-color: rgb(198, 248, 202);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+.chatcontent-header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 900px;
+    height: 70px;
+    background-color: rgb(116, 140, 252);
+    border-radius: 0 0 1rem 1rem;
+}
+
+.chatcontent-messages {
+    padding: 80px 0;
+}
+
+.logout-button {
+    height: 30px;
+    margin-left: 20px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 1rem;
+    background-color: rgb(116, 140, 252);
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.logout-button:hover {
+    transition: 0.4s;
+    background-color: rgb(168, 182, 245);
+}
+
+.logout-button:active {
+    transform: scale(0.9);
+}
+
+.chatcontent-name {
+    margin-right: 20px;
+    font-size: 30px;
+    color: white;
+}
+
+.chatcontent-empty {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    font-size: 36px;
+    color: rgb(120, 136, 211);
+}
+
+@media (max-width: 920px) {
+    .chatcontent {
+        width: 100%;
+    }
+    .chatcontent-header {
+        width: 100%;
+    }
+}

@@ -1,0 +1,50 @@
+.loginform {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    margin: 150px auto;
+    border-radius: 1rem;
+    padding: 10px 50px 90px 50px;
+    background-color: rgb(105, 158, 201);
+}
+
+.loginform-header {
+    color: white;
+    font-size: 22px;
+}
+
+.loginform-input {
+    width: 200px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.loginform-input:focus {
+    outline: none;
+}
+
+.loginform-button {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: rgb(52, 155, 52);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.loginform-button:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+.loginform-button:active {
+    transform: scale(0.9);
+}
