@@ -30,7 +30,7 @@ const onEmojiClick = ({emoji}) => {
 
     return (
         <form className='messageform' onSubmit={handleSubmit}>
-            {emojisOpen && <EmojiPicker 
+            {emojisOpen && <EmojiPicker width={300}
             onEmojiClick={onEmojiClick} />}
             <div className='emoji'>    
                 <div className='emoji-button' onClick={() => {setEmojisOpen(val => !val)}}>
