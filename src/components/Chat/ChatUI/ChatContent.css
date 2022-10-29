@@ -63,6 +63,7 @@
 @media (max-width: 920px) {
     .chatcontent {
         width: 100%;
+        border: none;
     }
     .chatcontent-header {
         width: 100%;
