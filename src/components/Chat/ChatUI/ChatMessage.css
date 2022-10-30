@@ -71,3 +71,9 @@
         margin-left: 38vw;
     }
 }
+
+@media (max-width: 360px) {
+    .message-fromyou {
+        margin-left: 34vw;
+    }
+}
