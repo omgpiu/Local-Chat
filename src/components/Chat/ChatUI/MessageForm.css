@@ -48,7 +48,13 @@
     color: rgb(97, 97, 97);
 }
 
-@media (max-width: 760px) {
+@media (max-width: 920px) {
+    .messageform {
+        width: 100%;
+    }
+}
+
+@media (max-width: 763px) {
     .messageform-input {
         width: 80vw;
     }
