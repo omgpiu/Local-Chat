@@ -1,6 +1,6 @@
 Local chat works without a server. All data is stored locally.
 
-App starts as standard after commands npm instal and npm start.
+App starts as standard after commands <b>npm instal</b> and <b>npm start</b>.
 
 [![chat1.png](https://i.postimg.cc/TY7RGKCk/chat1.png)](https://postimg.cc/kBSrvgr8)
 [![chat2.png](https://i.postimg.cc/qv6dTjtR/chat2.png)](https://postimg.cc/rDTHGGNX)
