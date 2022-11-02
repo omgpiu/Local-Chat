@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import ChatMessages from './ChatMessages';
 import MessageForm from './MessageForm';
 import { useNavigate } from "react-router-dom";
@@ -6,8 +6,6 @@ import './ChatUI/ChatContent.css';
 
 
 const ChatContent = () => {
-
-    const navigate = useNavigate();
     
     const usersMessage = localStorage.getItem('message')
         ? JSON.parse(localStorage.getItem('message'))
@@ -31,13 +29,17 @@ const ChatContent = () => {
         }
     }
 
-    const chatname = JSON.parse(localStorage.getItem('chatName'));
+    const messagesEnd = useRef(null);
+    useEffect(() => {
+        messagesEnd.current?.scrollIntoView()
+    }, [messages])
 
+    const chatname = JSON.parse(localStorage.getItem('chatName'));
     const filteredChat = messages.filter((message) => {
         return message.chat === chatname;
     });
-    console.log(messages)
 
+    const navigate = useNavigate();
     const Logout = () => {
         console.log('Logout')
         navigate("/")
@@ -61,7 +63,8 @@ const ChatContent = () => {
                         key={message.id}
                         />
             ).reverse()}</div>
-           <MessageForm sendMessage={sendMessage}/>  
+           <MessageForm sendMessage={sendMessage}/>
+           <div ref={messagesEnd}/> 
         </div>
         </>
         
