@@ -7,16 +7,28 @@ import './ChatUI/ChatContent.css';
 
 const ChatContent = () => {
     
+    //router 
+    const navigate = useNavigate();
+    
+    //state
+    const [messages, setMessages] = useState(usersMessage);
+    
+    //hooks 
+    const messagesEnd = useRef(null);
+    
+    //variables
     const usersMessage = localStorage.getItem('message')
         ? JSON.parse(localStorage.getItem('message'))
         : []; 
-    
-    const [messages, setMessages] = useState(usersMessage);
    
-    useEffect(() => {
-            localStorage.setItem('message', JSON.stringify(messages))
-        }, [messages])
-
+    const chatname = JSON.parse(localStorage.getItem('chatName'));
+    
+    const filteredChat = messages.filter((message) => {
+        return message.chat === chatname;
+    });
+    
+    //funcs
+    
     const sendMessage = (messageInput) => {
         if(messageInput) {
             const newMessage = {
@@ -28,28 +40,26 @@ const ChatContent = () => {
             setMessages(prev => [newMessage, ...prev])
         }
     }
-
-    const messagesEnd = useRef(null);
-    useEffect(() => {
-        messagesEnd.current?.scrollIntoView()
-    }, [messages])
-
-    const chatname = JSON.parse(localStorage.getItem('chatName'));
-    const filteredChat = messages.filter((message) => {
-        return message.chat === chatname;
-    });
-
-    const navigate = useNavigate();
-    const Logout = () => {
+   
+    const logOut = () => {
         console.log('Logout')
         navigate("/")
     }
+    
+    
+   useEffect(() => {
+            localStorage.setItem('message', JSON.stringify(messages))
+    }, [messages])
+    
+    useEffect(() => {
+        messagesEnd.current?.scrollIntoView()
+    }, [messages])
 
     return (
         <>
         <div className='chatcontent'>
             <div className='chatcontent-header'>
-                <button className='logout-button' onClick={Logout}>
+                <button className='logout-button' onClick={logOut}>
                     <span className='material-symbols-outlined'>arrow_back</span>
                 </button>
                 <h2 className='chatcontent-name'>{chatname}</h2> 
