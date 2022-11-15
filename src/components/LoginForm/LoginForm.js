@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './LoginForm.css';
 
-const LoginForm = ( {Login} ) => {
+const LoginForm = ( {singIn} ) => {
 
     const [name, setName] = useState('');
     const [chat, setChat] = useState('');
@@ -18,9 +18,8 @@ const LoginForm = ( {Login} ) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-
-        Login(name);
-        Login(chat);
+        singIn(name,chat)
+      
     }   
 
     return (
