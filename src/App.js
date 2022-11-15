@@ -8,18 +8,17 @@ function App() {
 
   const navigate = useNavigate();
 
-  const [users, setUsers] = useState({name: ''})
+  const [name, setName] = useState('')
 
   const Login = () => {
-    console.log('Login')
-    setUsers()
+    setName()
     navigate('/chat')
   }
 
 
   return (
     <div className='app'>
-      {(users.name !== '') ? (
+      {(name !== '') ? (
         <div>
           <ChatContent />
         </div>
