@@ -7,8 +7,13 @@ const LoginForm = ( {Login} ) => {
     const [chat, setChat] = useState('');
 
     useEffect (() => {
+        try{
+            
         localStorage.setItem('name', JSON.stringify(name))
         localStorage.setItem('chatName', JSON.stringify(chat))
+        } catch(e){
+         console.log('some error with LS', e)   
+        }
     }, [name, chat])
 
     useEffect (() => {
