@@ -4,6 +4,7 @@ const ChatMessages = ({message}) => {
     
     const username = JSON.parse(localStorage.getItem('name'));
 
+    //TODO lib classnames ??  clsx 
     return (
         <div className={message.user !== username ? 'message-fromthem' : 'message-fromyou'} key={message.id}>
             <p className='message-author'><b>{message.user}</b></p>
