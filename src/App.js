@@ -10,7 +10,7 @@ function App() {
 
   const [users, setUsers] = useState({name: ''})
 
-  const Login = () => {
+  const singIn = () => {
     console.log('Login')
     setUsers()
     navigate('/chat')
