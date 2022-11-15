@@ -10,8 +10,9 @@ function App() {
 
   const [users, setUsers] = useState({name: ''})
 
-  const Login = () => {
-    console.log('Login')
+  const singIn = (name,chatName) => {
+    //TODO do something with it
+    console.log(name,chatName)
     setUsers()
     navigate('/chat')
   }
@@ -24,7 +25,7 @@ function App() {
           <ChatContent />
         </div>
         ) : (
-          <LoginForm Login={Login} /> 
+          <LoginForm singIn={singIn} /> 
       )} 
     </div>   
   )
