@@ -27,7 +27,7 @@ const LoginForm = ( {Login} ) => {
         <form onSubmit={submitHandler}>
             <div className='loginform'>
                 <h2 className='loginform-header'>Enter your name and name of chat to start chatting</h2>
-                <div>
+
                     <input 
                         className='loginform-input'
                         placeholder='Name'
@@ -37,8 +37,8 @@ const LoginForm = ( {Login} ) => {
                         onChange={(e) => setName(e.target.value)} 
                         value={name} 
                         required/>
-                </div>
-                <div>
+               
+               
                     <input 
                         className='loginform-input'
                         placeholder='Chat name'
@@ -48,7 +48,7 @@ const LoginForm = ( {Login} ) => {
                         onChange={(e) => setChat(e.target.value)} 
                         value={chat} 
                         required/>
-                </div>
+            
                 <button className='loginform-button' type='submit'><b>LOGIN</b></button>
             </div>
         </form>
